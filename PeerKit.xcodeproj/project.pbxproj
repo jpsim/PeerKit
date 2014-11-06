@@ -10,6 +10,11 @@
 		E89FD6C61A0C3CDC00C2FEF7 /* PeerKit.h in Headers */ = {isa = PBXBuildFile; fileRef = E89FD6C51A0C3CDC00C2FEF7 /* PeerKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E89FD6CC1A0C3CDC00C2FEF7 /* PeerKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E89FD6C01A0C3CDC00C2FEF7 /* PeerKit.framework */; };
 		E89FD6D31A0C3CDC00C2FEF7 /* PeerKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FD6D21A0C3CDC00C2FEF7 /* PeerKitTests.swift */; };
+		E89FD6DE1A0C3CF800C2FEF7 /* PeerKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FD6DD1A0C3CF800C2FEF7 /* PeerKit.swift */; };
+		E89FD6E31A0C3D1000C2FEF7 /* Advertiser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FD6DF1A0C3D1000C2FEF7 /* Advertiser.swift */; };
+		E89FD6E41A0C3D1000C2FEF7 /* Browser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FD6E01A0C3D1000C2FEF7 /* Browser.swift */; };
+		E89FD6E51A0C3D1000C2FEF7 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FD6E11A0C3D1000C2FEF7 /* Session.swift */; };
+		E89FD6E61A0C3D1000C2FEF7 /* Transceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FD6E21A0C3D1000C2FEF7 /* Transceiver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +34,11 @@
 		E89FD6CB1A0C3CDC00C2FEF7 /* PeerKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PeerKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E89FD6D11A0C3CDC00C2FEF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E89FD6D21A0C3CDC00C2FEF7 /* PeerKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerKitTests.swift; sourceTree = "<group>"; };
+		E89FD6DD1A0C3CF800C2FEF7 /* PeerKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeerKit.swift; sourceTree = "<group>"; };
+		E89FD6DF1A0C3D1000C2FEF7 /* Advertiser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Advertiser.swift; sourceTree = "<group>"; };
+		E89FD6E01A0C3D1000C2FEF7 /* Browser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Browser.swift; sourceTree = "<group>"; };
+		E89FD6E11A0C3D1000C2FEF7 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		E89FD6E21A0C3D1000C2FEF7 /* Transceiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transceiver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +82,11 @@
 			isa = PBXGroup;
 			children = (
 				E89FD6C51A0C3CDC00C2FEF7 /* PeerKit.h */,
+				E89FD6DD1A0C3CF800C2FEF7 /* PeerKit.swift */,
+				E89FD6DF1A0C3D1000C2FEF7 /* Advertiser.swift */,
+				E89FD6E01A0C3D1000C2FEF7 /* Browser.swift */,
+				E89FD6E11A0C3D1000C2FEF7 /* Session.swift */,
+				E89FD6E21A0C3D1000C2FEF7 /* Transceiver.swift */,
 				E89FD6C31A0C3CDC00C2FEF7 /* Supporting Files */,
 			);
 			path = PeerKit;
@@ -209,6 +224,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E89FD6E51A0C3D1000C2FEF7 /* Session.swift in Sources */,
+				E89FD6E31A0C3D1000C2FEF7 /* Advertiser.swift in Sources */,
+				E89FD6DE1A0C3CF800C2FEF7 /* PeerKit.swift in Sources */,
+				E89FD6E61A0C3D1000C2FEF7 /* Transceiver.swift in Sources */,
+				E89FD6E41A0C3D1000C2FEF7 /* Browser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +339,7 @@
 		E89FD6D71A0C3CDC00C2FEF7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -328,12 +349,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		E89FD6D81A0C3CDC00C2FEF7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
