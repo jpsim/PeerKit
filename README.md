@@ -16,7 +16,7 @@ enum Event: String {
 PeerKit.sendEvent(Event.StartGame.rawValue, object: ["myInfo": "hello!"])
 ```
 
-See the [CardsAgainst](https://github.com/jpsim/CardsAgainst) app for example usage. Specifically the [ConnectionManager](https://github.com/jpsim/CardsAgainst/blob/master/CardsAgainst/ConnectionManager.swift) class.
+See the [CardsAgainst](https://github.com/jpsim/CardsAgainst) app for example usage. Specifically the [ConnectionManager](https://github.com/jpsim/CardsAgainst/blob/master/CardsAgainst/Controllers/ConnectionManager.swift) class.
 
 ## License
 
