@@ -6,7 +6,7 @@
 
 ```swift
 // Automatically detect and attach to other peers with this service type
-PeerKit.transceive("com.jpsim.myApp")
+PeerKit.transceive("com-jpsim-myApp")
 
 enum Event: String {
     case StartGame = "StartGame", EndGame = "EndGame"
