@@ -17,6 +17,7 @@ public typealias ObjectBlock = ((peerID: MCPeerID, object: AnyObject?) -> Void)
 
 // MARK: Event Blocks
 
+public var onConnecting: PeerBlock?
 public var onConnect: PeerBlock?
 public var onDisconnect: PeerBlock?
 public var onEvent: EventBlock?
@@ -30,6 +31,14 @@ private let transceiver = Transceiver()
 public var session: MCSession?
 
 // MARK: Event Handling
+
+func didConnecting(peer: MCPeerID) {
+    if let onConnecting = onConnecting {
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            onConnecting(peerID: peer)
+        })
+    }
+}
 
 func didConnect(peer: MCPeerID) {
     if session == nil {

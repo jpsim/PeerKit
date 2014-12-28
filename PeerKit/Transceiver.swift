@@ -53,7 +53,7 @@ public class Transceiver: SessionDelegate {
     }
 
     public func connecting(myPeerID: MCPeerID, toPeer peer: MCPeerID) {
-        // unsupported
+        didConnecting(peer)
     }
 
     public func connected(myPeerID: MCPeerID, toPeer peer: MCPeerID) {
