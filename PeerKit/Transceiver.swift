@@ -53,15 +53,15 @@ public class Transceiver: SessionDelegate {
     }
 
     public func connecting(myPeerID: MCPeerID, toPeer peer: MCPeerID) {
-        didConnecting(peer)
+        didConnecting(myPeerID, peer)
     }
 
     public func connected(myPeerID: MCPeerID, toPeer peer: MCPeerID) {
-        didConnect(peer)
+        didConnect(myPeerID, peer)
     }
 
     public func disconnected(myPeerID: MCPeerID, fromPeer peer: MCPeerID) {
-        didDisconnect(peer)
+        didDisconnect(myPeerID, peer)
     }
 
     public func receivedData(myPeerID: MCPeerID, data: NSData, fromPeer peer: MCPeerID) {

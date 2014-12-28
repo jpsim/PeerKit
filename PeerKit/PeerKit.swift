@@ -11,7 +11,7 @@ import MultipeerConnectivity
 
 // MARK: Type Aliases
 
-public typealias PeerBlock = ((peerID: MCPeerID) -> Void)
+public typealias PeerBlock = ((myPeerID:MCPeerID, peerID: MCPeerID) -> Void)
 public typealias EventBlock = ((peerID: MCPeerID, event: String, object: AnyObject?) -> Void)
 public typealias ObjectBlock = ((peerID: MCPeerID, object: AnyObject?) -> Void)
 
@@ -32,29 +32,29 @@ public var session: MCSession?
 
 // MARK: Event Handling
 
-func didConnecting(peer: MCPeerID) {
+func didConnecting(myPeerID: MCPeerID, peer: MCPeerID) {
     if let onConnecting = onConnecting {
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
-            onConnecting(peerID: peer)
+            onConnecting(myPeerID: myPeerID, peerID: peer)
         })
     }
 }
 
-func didConnect(peer: MCPeerID) {
+func didConnect(myPeerID: MCPeerID, peer: MCPeerID) {
     if session == nil {
         session = transceiver.sessionForPeer(peer)
     }
     if let onConnect = onConnect {
         dispatch_async(dispatch_get_main_queue()) {
-            onConnect(peerID: peer)
+            onConnect(myPeerID: myPeerID, peerID: peer)
         }
     }
 }
 
-func didDisconnect(peer: MCPeerID) {
+func didDisconnect(myPeerID: MCPeerID, peer: MCPeerID) {
     if let onDisconnect = onDisconnect {
         dispatch_async(dispatch_get_main_queue()) {
-            onDisconnect(peerID: peer)
+            onDisconnect(myPeerID: myPeerID, peerID: peer)
         }
     }
 }
