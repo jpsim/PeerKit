@@ -67,4 +67,8 @@ public class Transceiver: SessionDelegate {
     public func receivedData(myPeerID: MCPeerID, data: NSData, fromPeer peer: MCPeerID) {
         didReceiveData(data, fromPeer: peer)
     }
+
+    public func finishReceivingResource(myPeerID: MCPeerID, resourceName: String, fromPeer peer: MCPeerID, atURL localURL: NSURL) {
+        didFinishReceivingResource(myPeerID, resourceName, fromPeer: peer, atURL: localURL)
+    }
 }

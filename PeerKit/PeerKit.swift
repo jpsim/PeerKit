@@ -14,6 +14,7 @@ import MultipeerConnectivity
 public typealias PeerBlock = ((myPeerID:MCPeerID, peerID: MCPeerID) -> Void)
 public typealias EventBlock = ((peerID: MCPeerID, event: String, object: AnyObject?) -> Void)
 public typealias ObjectBlock = ((peerID: MCPeerID, object: AnyObject?) -> Void)
+public typealias ResourceBlock = ((myPeerID: MCPeerID, resourceName: String, peer: MCPeerID, localURL: NSURL) -> Void)
 
 // MARK: Event Blocks
 
@@ -22,6 +23,7 @@ public var onConnect: PeerBlock?
 public var onDisconnect: PeerBlock?
 public var onEvent: EventBlock?
 public var onEventObject: ObjectBlock?
+public var onFinishReceivingResource: ResourceBlock?
 public var eventBlocks = [String: ObjectBlock]()
 
 // MARK: PeerKit Globals
@@ -73,6 +75,14 @@ func didReceiveData(data: NSData, fromPeer peer: MCPeerID) {
     }
 }
 
+func didFinishReceivingResource(myPeerID: MCPeerID, resourceName: String, fromPeer peer: MCPeerID, atURL localURL: NSURL) {
+    if let onFinishReceivingResource = onFinishReceivingResource {
+        dispatch_async(dispatch_get_main_queue()) {
+            onFinishReceivingResource(myPeerID: myPeerID, resourceName: resourceName, peer: peer, localURL: localURL)
+        }
+    }
+}
+
 // MARK: Advertise/Browse
 
 public func transceive(serviceType: String, discoveryInfo: [String: String]? = nil) {
@@ -99,4 +109,25 @@ public func sendEvent(event: String, object: AnyObject? = nil, toPeers peers: [M
     }
     let data = NSKeyedArchiver.archivedDataWithRootObject(rootObject)
     session?.sendData(data, toPeers: peers, withMode: .Reliable, error: nil)
+}
+
+public func sendResourceAtURL(resourceURL: NSURL!,
+                   withName resourceName: String!,
+  toPeers peers: [MCPeerID]? = session?.connectedPeers as [MCPeerID]?,
+  withCompletionHandler completionHandler: ((NSError!) -> Void)!) -> [NSProgress]! {
+
+    if let peers = peers {
+
+        var progress = [NSProgress]()
+
+        for peerID in peers {
+            let p = session?.sendResourceAtURL(resourceURL, withName: resourceName, toPeer: peerID, withCompletionHandler: completionHandler)
+            progress.append(p!)
+        }
+
+        return progress
+    } else {
+        return nil
+    }
+
 }
