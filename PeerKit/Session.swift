@@ -30,6 +30,12 @@ public class Session: NSObject, MCSessionDelegate {
         mcSession.delegate = self
     }
 
+    public func disconnect() {
+        self.delegate = nil
+        mcSession.delegate = nil
+        mcSession.disconnect()
+    }
+
     // MARK: MCSessionDelegate
 
     public func session(session: MCSession!, peer peerID: MCPeerID!, didChangeState state: MCSessionState) {

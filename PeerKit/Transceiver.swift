@@ -33,8 +33,12 @@ public class Transceiver: SessionDelegate {
     }
 
     func stopTransceiving() {
+        advertiser.delegate = nil
+        browser.delegate = nil
         advertiser.stopAdvertising()
         browser.stopBrowsing()
+        advertiser.disconnect()
+        browser.disconnect()
     }
 
     func startAdvertising(#serviceType: String, discoveryInfo: [String: String]? = nil) {
