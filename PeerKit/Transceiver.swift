@@ -16,10 +16,12 @@ enum TransceiverMode {
 public class Transceiver: SessionDelegate {
 
     var transceiverMode = TransceiverMode.Both
-    let advertiser = Advertiser(displayName: myName)
-    let browser = Browser(displayName: myName)
+    let advertiser: Advertiser
+    let browser: Browser
 
-    init() {
+    public init(displayName: String!) {
+        advertiser = Advertiser(displayName: displayName)
+        browser = Browser(displayName: displayName)
         advertiser.delegate = self
         browser.delegate = self
     }

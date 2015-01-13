@@ -29,7 +29,7 @@ public var eventBlocks = [String: ObjectBlock]()
 // MARK: PeerKit Globals
 
 let myName = UIDevice.currentDevice().name
-private let transceiver = Transceiver()
+public var transceiver = Transceiver(displayName: myName)
 public var session: MCSession?
 
 // MARK: Event Handling
