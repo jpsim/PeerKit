@@ -97,6 +97,11 @@ public func browse(serviceType: String) {
     transceiver.startBrowsing(serviceType: serviceType)
 }
 
+public func stopTransceiving() {
+    transceiver.stopTransceiving()
+    session = nil
+}
+
 // MARK: Events
 
 public func sendEvent(event: String, object: AnyObject? = nil, toPeers peers: [MCPeerID]? = session?.connectedPeers as [MCPeerID]?) {

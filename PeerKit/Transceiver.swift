@@ -32,6 +32,11 @@ public class Transceiver: SessionDelegate {
         transceiverMode = .Both
     }
 
+    func stopTransceiving() {
+        advertiser.stopAdvertising()
+        browser.stopBrowsing()
+    }
+
     func startAdvertising(#serviceType: String, discoveryInfo: [String: String]? = nil) {
         advertiser.startAdvertising(serviceType: serviceType, discoveryInfo: discoveryInfo)
         transceiverMode = .Advertise
