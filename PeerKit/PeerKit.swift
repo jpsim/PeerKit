@@ -11,7 +11,7 @@ import MultipeerConnectivity
 
 // MARK: Type Aliases
 
-public typealias PeerBlock = ((myPeerID:MCPeerID, peerID: MCPeerID) -> Void)
+public typealias PeerBlock = ((myPeerID: MCPeerID, peerID: MCPeerID) -> Void)
 public typealias EventBlock = ((peerID: MCPeerID, event: String, object: AnyObject?) -> Void)
 public typealias ObjectBlock = ((peerID: MCPeerID, object: AnyObject?) -> Void)
 public typealias ResourceBlock = ((myPeerID: MCPeerID, resourceName: String, peer: MCPeerID, localURL: NSURL) -> Void)
