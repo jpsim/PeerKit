@@ -16,10 +16,12 @@ enum TransceiverMode {
 public class Transceiver: SessionDelegate {
 
     var transceiverMode = TransceiverMode.Both
-    let advertiser = Advertiser(displayName: myName)
-    let browser = Browser(displayName: myName)
+    let advertiser: Advertiser
+    let browser: Browser
 
-    init() {
+    public init(displayName: String!) {
+        advertiser = Advertiser(displayName: displayName)
+        browser = Browser(displayName: displayName)
         advertiser.delegate = self
         browser.delegate = self
     }
@@ -28,6 +30,15 @@ public class Transceiver: SessionDelegate {
         advertiser.startAdvertising(serviceType: serviceType, discoveryInfo: discoveryInfo)
         browser.startBrowsing(serviceType)
         transceiverMode = .Both
+    }
+
+    func stopTransceiving() {
+        advertiser.delegate = nil
+        browser.delegate = nil
+        advertiser.stopAdvertising()
+        browser.stopBrowsing()
+        advertiser.disconnect()
+        browser.disconnect()
     }
 
     func startAdvertising(#serviceType: String, discoveryInfo: [String: String]? = nil) {
@@ -53,18 +64,22 @@ public class Transceiver: SessionDelegate {
     }
 
     public func connecting(myPeerID: MCPeerID, toPeer peer: MCPeerID) {
-        // unsupported
+        didConnecting(myPeerID, peer)
     }
 
     public func connected(myPeerID: MCPeerID, toPeer peer: MCPeerID) {
-        didConnect(peer)
+        didConnect(myPeerID, peer)
     }
 
     public func disconnected(myPeerID: MCPeerID, fromPeer peer: MCPeerID) {
-        didDisconnect(peer)
+        didDisconnect(myPeerID, peer)
     }
 
     public func receivedData(myPeerID: MCPeerID, data: NSData, fromPeer peer: MCPeerID) {
         didReceiveData(data, fromPeer: peer)
+    }
+
+    public func finishReceivingResource(myPeerID: MCPeerID, resourceName: String, fromPeer peer: MCPeerID, atURL localURL: NSURL) {
+        didFinishReceivingResource(myPeerID, resourceName, fromPeer: peer, atURL: localURL)
     }
 }
