@@ -37,10 +37,12 @@ class Advertiser: NSObject, MCNearbyServiceAdvertiserDelegate {
 
         if let context = context {
             // Compatibility for older versions of PeerKit – remove after some time has passed.
-            var runningTime = -timeStarted.timeIntervalSinceNow
-            var peerRunningTime = NSTimeInterval()
-            context.getBytes(&peerRunningTime)
-            accept = peerRunningTime > runningTime
+            if (context.length == 8) {
+                var runningTime = -timeStarted.timeIntervalSinceNow
+                var peerRunningTime = NSTimeInterval()
+                context.getBytes(&peerRunningTime, length: 8)
+                accept = peerRunningTime > runningTime
+            }
         } else {
             accept = mcSession.myPeerID.hashValue > peerID.hashValue
         }
