@@ -24,12 +24,9 @@ class Advertiser: Session, MCNearbyServiceAdvertiserDelegate {
     }
 
     func advertiser(advertiser: MCNearbyServiceAdvertiser!, didReceiveInvitationFromPeer peerID: MCPeerID!, withContext context: NSData!, invitationHandler: ((Bool, MCSession!) -> Void)!) {
-        var runningTime = -timeStarted.timeIntervalSinceNow
-        var peerRunningTime = NSTimeInterval()
-        context.getBytes(&peerRunningTime)
-        let isPeerOlder = (peerRunningTime > runningTime)
-        invitationHandler(isPeerOlder, mcSession)
-        if isPeerOlder {
+        let accept = myPeerID.hashValue > peerID.hashValue
+        invitationHandler(accept, mcSession)
+        if accept {
             stopAdvertising()
         }
     }
