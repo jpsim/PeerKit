@@ -31,8 +31,20 @@ class Advertiser: NSObject, MCNearbyServiceAdvertiserDelegate {
         advertiser?.stopAdvertisingPeer()
     }
 
-    func advertiser(advertiser: MCNearbyServiceAdvertiser!, didReceiveInvitationFromPeer peerID: MCPeerID!, withContext context: NSData!, invitationHandler: ((Bool, MCSession!) -> Void)!) {
-        let accept = mcSession.myPeerID.hashValue > peerID.hashValue
+    func advertiser(advertiser: MCNearbyServiceAdvertiser!, didReceiveInvitationFromPeer peerID: MCPeerID!, withContext context: NSData?, invitationHandler: ((Bool, MCSession!) -> Void)!) {
+
+        var accept = false
+
+        if let context = context {
+            // Compatibility for older versions of PeerKit – remove after some time has passed.
+            var runningTime = -timeStarted.timeIntervalSinceNow
+            var peerRunningTime = NSTimeInterval()
+            context.getBytes(&peerRunningTime)
+            accept = peerRunningTime > runningTime
+        } else {
+            accept = mcSession.myPeerID.hashValue > peerID.hashValue
+        }
+
         invitationHandler(accept, mcSession)
         if accept {
             stopAdvertising()
