@@ -16,14 +16,15 @@ enum TransceiverMode {
 public class Transceiver: SessionDelegate {
 
     var transceiverMode = TransceiverMode.Both
+    let session: Session
     let advertiser: Advertiser
     let browser: Browser
 
     public init(displayName: String!) {
-        advertiser = Advertiser(displayName: displayName)
-        browser = Browser(displayName: displayName)
-        advertiser.delegate = self
-        browser.delegate = self
+        session = Session(displayName: displayName, delegate: nil)
+        advertiser = Advertiser(mcSession: session.mcSession)
+        browser = Browser(mcSession: session.mcSession)
+        session.delegate = self
     }
 
     func startTransceiving(#serviceType: String, discoveryInfo: [String: String]? = nil) {
@@ -33,12 +34,10 @@ public class Transceiver: SessionDelegate {
     }
 
     func stopTransceiving() {
-        advertiser.delegate = nil
-        browser.delegate = nil
+        session.delegate = nil
         advertiser.stopAdvertising()
         browser.stopBrowsing()
-        advertiser.disconnect()
-        browser.disconnect()
+        session.disconnect()
     }
 
     func startAdvertising(#serviceType: String, discoveryInfo: [String: String]? = nil) {
@@ -49,18 +48,6 @@ public class Transceiver: SessionDelegate {
     func startBrowsing(#serviceType: String) {
         browser.startBrowsing(serviceType)
         transceiverMode = .Browse
-    }
-
-    func sessionForPeer(peerID: MCPeerID) -> MCSession? {
-        if (advertiser.mcSession.connectedPeers as [MCPeerID]).filter({ $0 == peerID }).count > 0 {
-            return advertiser.mcSession
-        }
-
-        if (browser.mcSession.connectedPeers as [MCPeerID]).filter({ $0 == peerID }).count > 0 {
-            return browser.mcSession
-        }
-
-        return nil
     }
 
     public func connecting(myPeerID: MCPeerID, toPeer peer: MCPeerID) {

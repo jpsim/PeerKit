@@ -9,11 +9,19 @@
 import Foundation
 import MultipeerConnectivity
 
-class Advertiser: Session, MCNearbyServiceAdvertiserDelegate {
+class Advertiser: NSObject, MCNearbyServiceAdvertiserDelegate {
+
+    let mcSession: MCSession
+
+    init(mcSession: MCSession) {
+        self.mcSession = mcSession
+        super.init()
+    }
+
     private var advertiser: MCNearbyServiceAdvertiser?
 
     func startAdvertising(#serviceType: String, discoveryInfo: [String: String]? = nil) {
-        advertiser = MCNearbyServiceAdvertiser(peer: myPeerID, discoveryInfo: discoveryInfo, serviceType: serviceType)
+        advertiser = MCNearbyServiceAdvertiser(peer: mcSession.myPeerID, discoveryInfo: discoveryInfo, serviceType: serviceType)
         advertiser?.delegate = self
         advertiser?.startAdvertisingPeer()
     }
@@ -24,7 +32,7 @@ class Advertiser: Session, MCNearbyServiceAdvertiserDelegate {
     }
 
     func advertiser(advertiser: MCNearbyServiceAdvertiser!, didReceiveInvitationFromPeer peerID: MCPeerID!, withContext context: NSData!, invitationHandler: ((Bool, MCSession!) -> Void)!) {
-        let accept = myPeerID.hashValue > peerID.hashValue
+        let accept = mcSession.myPeerID.hashValue > peerID.hashValue
         invitationHandler(accept, mcSession)
         if accept {
             stopAdvertising()

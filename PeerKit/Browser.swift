@@ -9,12 +9,19 @@
 import Foundation
 import MultipeerConnectivity
 
-class Browser: Session, MCNearbyServiceBrowserDelegate {
+class Browser: NSObject, MCNearbyServiceBrowserDelegate {
+
+    let mcSession: MCSession
+
+    init(mcSession: MCSession) {
+        self.mcSession = mcSession
+        super.init()
+    }
 
     var mcBrowser: MCNearbyServiceBrowser?
 
     func startBrowsing(serviceType: String) {
-        mcBrowser = MCNearbyServiceBrowser(peer: myPeerID, serviceType: serviceType)
+        mcBrowser = MCNearbyServiceBrowser(peer: mcSession.myPeerID, serviceType: serviceType)
         mcBrowser?.delegate = self
         mcBrowser?.startBrowsingForPeers()
     }
