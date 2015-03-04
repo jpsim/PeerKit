@@ -44,7 +44,7 @@ func didConnecting(myPeerID: MCPeerID, peer: MCPeerID) {
 
 func didConnect(myPeerID: MCPeerID, peer: MCPeerID) {
     if session == nil {
-        session = transceiver.sessionForPeer(peer)
+        session = transceiver.session.mcSession
     }
     if let onConnect = onConnect {
         dispatch_async(dispatch_get_main_queue()) {

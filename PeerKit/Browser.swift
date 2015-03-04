@@ -11,12 +11,19 @@ import MultipeerConnectivity
 
 let timeStarted = NSDate()
 
-class Browser: Session, MCNearbyServiceBrowserDelegate {
+class Browser: NSObject, MCNearbyServiceBrowserDelegate {
+
+    let mcSession: MCSession
+
+    init(mcSession: MCSession) {
+        self.mcSession = mcSession
+        super.init()
+    }
 
     var mcBrowser: MCNearbyServiceBrowser?
 
     func startBrowsing(serviceType: String) {
-        mcBrowser = MCNearbyServiceBrowser(peer: myPeerID, serviceType: serviceType)
+        mcBrowser = MCNearbyServiceBrowser(peer: mcSession.myPeerID, serviceType: serviceType)
         mcBrowser?.delegate = self
         mcBrowser?.startBrowsingForPeers()
     }
@@ -27,6 +34,7 @@ class Browser: Session, MCNearbyServiceBrowserDelegate {
     }
 
     func browser(browser: MCNearbyServiceBrowser!, foundPeer peerID: MCPeerID!, withDiscoveryInfo info: [NSObject : AnyObject]!) {
+        // This context is set for compatibility for older versions of PeerKit – remove after some time has passed.
         var runningTime = -timeStarted.timeIntervalSinceNow
         let context = NSData(bytes: &runningTime, length: sizeof(NSTimeInterval))
         browser.invitePeer(peerID, toSession: mcSession, withContext: context, timeout: 30)
