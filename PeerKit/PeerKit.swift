@@ -36,9 +36,9 @@ public var session: MCSession?
 
 func didConnecting(myPeerID: MCPeerID, peer: MCPeerID) {
     if let onConnecting = onConnecting {
-        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+        dispatch_async(dispatch_get_main_queue()) {
             onConnecting(myPeerID: myPeerID, peerID: peer)
-        })
+        }
     }
 }
 
@@ -62,16 +62,17 @@ func didDisconnect(myPeerID: MCPeerID, peer: MCPeerID) {
 }
 
 func didReceiveData(data: NSData, fromPeer peer: MCPeerID) {
-    let dict = NSKeyedUnarchiver.unarchiveObjectWithData(data) as [String: AnyObject]
-    let event = dict["event"] as String
-    let object: AnyObject? = dict["object"]
-    dispatch_async(dispatch_get_main_queue()) {
-        if let onEvent = onEvent {
-            onEvent(peerID: peer, event: event, object: object)
-        }
-        if let eventBlock = eventBlocks[event] {
-            eventBlock(peerID: peer, object: object)
-        }
+    if let dict = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? [String: AnyObject],
+        let event = dict["event"] as? String,
+        let object: AnyObject? = dict["object"] {
+            dispatch_async(dispatch_get_main_queue()) {
+                if let onEvent = onEvent {
+                    onEvent(peerID: peer, event: event, object: object)
+                }
+                if let eventBlock = eventBlocks[event] {
+                    eventBlock(peerID: peer, object: object)
+                }
+            }
     }
 }
 
@@ -104,13 +105,13 @@ public func stopTransceiving() {
 
 // MARK: Events
 
-public func sendEvent(event: String, object: AnyObject? = nil, toPeers peers: [MCPeerID]? = session?.connectedPeers as [MCPeerID]?) {
-    if peers == nil {
+public func sendEvent(event: String, object: AnyObject? = nil, toPeers peers: [MCPeerID]? = session?.connectedPeers as? [MCPeerID]) {
+    if peers == nil || (peers!.count == 0) {
         return
     }
     var rootObject: [String: AnyObject] = ["event": event]
-    if object != nil {
-        rootObject["object"] = object!
+    if let object: AnyObject = object {
+        rootObject["object"] = object
     }
     let data = NSKeyedArchiver.archivedDataWithRootObject(rootObject)
     session?.sendData(data, toPeers: peers, withMode: .Reliable, error: nil)
@@ -118,21 +119,13 @@ public func sendEvent(event: String, object: AnyObject? = nil, toPeers peers: [M
 
 public func sendResourceAtURL(resourceURL: NSURL!,
                    withName resourceName: String!,
-  toPeers peers: [MCPeerID]? = session?.connectedPeers as [MCPeerID]?,
+  toPeers peers: [MCPeerID]? = session?.connectedPeers as? [MCPeerID],
   withCompletionHandler completionHandler: ((NSError!) -> Void)!) -> [NSProgress]! {
 
-    if let peers = peers {
-
-        var progress = [NSProgress]()
-
-        for peerID in peers {
-            let p = session?.sendResourceAtURL(resourceURL, withName: resourceName, toPeer: peerID, withCompletionHandler: completionHandler)
-            progress.append(p!)
+    if let session = session {
+        return peers?.map { peerID in
+            return session.sendResourceAtURL(resourceURL, withName: resourceName, toPeer: peerID, withCompletionHandler: completionHandler)
         }
-
-        return progress
-    } else {
-        return nil
     }
-
+    return nil
 }

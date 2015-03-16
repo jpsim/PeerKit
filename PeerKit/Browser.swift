@@ -34,10 +34,7 @@ class Browser: NSObject, MCNearbyServiceBrowserDelegate {
     }
 
     func browser(browser: MCNearbyServiceBrowser!, foundPeer peerID: MCPeerID!, withDiscoveryInfo info: [NSObject : AnyObject]!) {
-        // This context is set for compatibility for older versions of PeerKit – remove after some time has passed.
-        var runningTime = -timeStarted.timeIntervalSinceNow
-        let context = NSData(bytes: &runningTime, length: sizeof(NSTimeInterval))
-        browser.invitePeer(peerID, toSession: mcSession, withContext: context, timeout: 30)
+        browser.invitePeer(peerID, toSession: mcSession, withContext: nil, timeout: 30)
     }
 
     func browser(browser: MCNearbyServiceBrowser!, lostPeer peerID: MCPeerID!) {
