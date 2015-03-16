@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E89FD6BF1A0C3CDC00C2FEF7"
                BuildableName = "PeerKit.framework"
-               BlueprintName = "PeerKit"
+               BlueprintName = "PeerKit-iOS"
                ReferencedContainer = "container:PeerKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -29,8 +29,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E89FD6CA1A0C3CDC00C2FEF7"
-               BuildableName = "PeerKitTests.xctest"
-               BlueprintName = "PeerKitTests"
+               BuildableName = "PeerKit-iOSTests.xctest"
+               BlueprintName = "PeerKit-iOSTests"
                ReferencedContainer = "container:PeerKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,9 +46,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E89FD6CA1A0C3CDC00C2FEF7"
-               BuildableName = "PeerKitTests.xctest"
-               BlueprintName = "PeerKitTests"
+               BlueprintIdentifier = "E86EC4411AB734F5001A7734"
+               BuildableName = "PeerKit-iOS-Tests.xctest"
+               BlueprintName = "PeerKit-iOS-Tests"
                ReferencedContainer = "container:PeerKit.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -58,7 +58,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E89FD6BF1A0C3CDC00C2FEF7"
             BuildableName = "PeerKit.framework"
-            BlueprintName = "PeerKit"
+            BlueprintName = "PeerKit-iOS"
             ReferencedContainer = "container:PeerKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -77,7 +77,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E89FD6BF1A0C3CDC00C2FEF7"
             BuildableName = "PeerKit.framework"
-            BlueprintName = "PeerKit"
+            BlueprintName = "PeerKit-iOS"
             ReferencedContainer = "container:PeerKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -95,7 +95,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E89FD6BF1A0C3CDC00C2FEF7"
             BuildableName = "PeerKit.framework"
-            BlueprintName = "PeerKit"
+            BlueprintName = "PeerKit-iOS"
             ReferencedContainer = "container:PeerKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

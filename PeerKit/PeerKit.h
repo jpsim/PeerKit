@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 JP Simard. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for PeerKit.
 FOUNDATION_EXPORT double PeerKitVersionNumber;
@@ -15,5 +15,3 @@ FOUNDATION_EXPORT double PeerKitVersionNumber;
 FOUNDATION_EXPORT const unsigned char PeerKitVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <PeerKit/PublicHeader.h>
-
-

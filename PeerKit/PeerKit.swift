@@ -28,7 +28,13 @@ public var eventBlocks = [String: ObjectBlock]()
 
 // MARK: PeerKit Globals
 
-let myName = UIDevice.currentDevice().name
+#if os(iOS)
+import UIKit
+public let myName = UIDevice.currentDevice().name
+#else
+public let myName = NSHost.currentHost().localizedName ?? ""
+#endif
+
 public var transceiver = Transceiver(displayName: myName)
 public var session: MCSession?
 
