@@ -7,31 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E86EC4481AB734F5001A7734 /* PeerKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E89FD6C01A0C3CDC00C2FEF7 /* PeerKit.framework */; };
+		E86EC4581AB73597001A7734 /* PeerKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8DC82821AB7306C000BB585 /* PeerKit.framework */; };
+		E86EC45E1AB735A1001A7734 /* PeerKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FD6D21A0C3CDC00C2FEF7 /* PeerKitTests.swift */; };
+		E86EC45F1AB735A2001A7734 /* PeerKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FD6D21A0C3CDC00C2FEF7 /* PeerKitTests.swift */; };
 		E89FD6C61A0C3CDC00C2FEF7 /* PeerKit.h in Headers */ = {isa = PBXBuildFile; fileRef = E89FD6C51A0C3CDC00C2FEF7 /* PeerKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E89FD6CC1A0C3CDC00C2FEF7 /* PeerKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E89FD6C01A0C3CDC00C2FEF7 /* PeerKit.framework */; };
-		E89FD6D31A0C3CDC00C2FEF7 /* PeerKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FD6D21A0C3CDC00C2FEF7 /* PeerKitTests.swift */; };
 		E89FD6DE1A0C3CF800C2FEF7 /* PeerKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FD6DD1A0C3CF800C2FEF7 /* PeerKit.swift */; };
 		E89FD6E31A0C3D1000C2FEF7 /* Advertiser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FD6DF1A0C3D1000C2FEF7 /* Advertiser.swift */; };
 		E89FD6E41A0C3D1000C2FEF7 /* Browser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FD6E01A0C3D1000C2FEF7 /* Browser.swift */; };
 		E89FD6E51A0C3D1000C2FEF7 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FD6E11A0C3D1000C2FEF7 /* Session.swift */; };
 		E89FD6E61A0C3D1000C2FEF7 /* Transceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FD6E21A0C3D1000C2FEF7 /* Transceiver.swift */; };
+		E8DC829C1AB730CD000BB585 /* PeerKit.h in Headers */ = {isa = PBXBuildFile; fileRef = E89FD6C51A0C3CDC00C2FEF7 /* PeerKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E8DC829D1AB730D3000BB585 /* PeerKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FD6DD1A0C3CF800C2FEF7 /* PeerKit.swift */; };
+		E8DC829E1AB730D3000BB585 /* Advertiser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FD6DF1A0C3D1000C2FEF7 /* Advertiser.swift */; };
+		E8DC829F1AB730D3000BB585 /* Browser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FD6E01A0C3D1000C2FEF7 /* Browser.swift */; };
+		E8DC82A01AB730D3000BB585 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FD6E11A0C3D1000C2FEF7 /* Session.swift */; };
+		E8DC82A11AB730D3000BB585 /* Transceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89FD6E21A0C3D1000C2FEF7 /* Transceiver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		E89FD6CD1A0C3CDC00C2FEF7 /* PBXContainerItemProxy */ = {
+		E86EC4491AB734F5001A7734 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E89FD6B71A0C3CDC00C2FEF7 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = E89FD6BF1A0C3CDC00C2FEF7;
-			remoteInfo = PeerKit;
+			remoteInfo = "PeerKit-iOS";
+		};
+		E86EC4591AB73597001A7734 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E89FD6B71A0C3CDC00C2FEF7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E8DC82811AB7306C000BB585;
+			remoteInfo = "PeerKit-OSX";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E86EC4421AB734F5001A7734 /* PeerKit-iOS-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PeerKit-iOS-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E86EC4521AB73597001A7734 /* PeerKit-OSX-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PeerKit-OSX-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E89FD6C01A0C3CDC00C2FEF7 /* PeerKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PeerKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E89FD6C41A0C3CDC00C2FEF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E89FD6C51A0C3CDC00C2FEF7 /* PeerKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PeerKit.h; sourceTree = "<group>"; };
-		E89FD6CB1A0C3CDC00C2FEF7 /* PeerKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PeerKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E89FD6D11A0C3CDC00C2FEF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E89FD6D21A0C3CDC00C2FEF7 /* PeerKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerKitTests.swift; sourceTree = "<group>"; };
 		E89FD6DD1A0C3CF800C2FEF7 /* PeerKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeerKit.swift; sourceTree = "<group>"; };
@@ -39,9 +55,26 @@
 		E89FD6E01A0C3D1000C2FEF7 /* Browser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Browser.swift; sourceTree = "<group>"; };
 		E89FD6E11A0C3D1000C2FEF7 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		E89FD6E21A0C3D1000C2FEF7 /* Transceiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transceiver.swift; sourceTree = "<group>"; };
+		E8DC82821AB7306C000BB585 /* PeerKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PeerKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		E86EC43F1AB734F5001A7734 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E86EC4481AB734F5001A7734 /* PeerKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E86EC44F1AB73597001A7734 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E86EC4581AB73597001A7734 /* PeerKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E89FD6BC1A0C3CDC00C2FEF7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -49,11 +82,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E89FD6C81A0C3CDC00C2FEF7 /* Frameworks */ = {
+		E8DC827E1AB7306C000BB585 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E89FD6CC1A0C3CDC00C2FEF7 /* PeerKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,7 +105,9 @@
 			isa = PBXGroup;
 			children = (
 				E89FD6C01A0C3CDC00C2FEF7 /* PeerKit.framework */,
-				E89FD6CB1A0C3CDC00C2FEF7 /* PeerKitTests.xctest */,
+				E8DC82821AB7306C000BB585 /* PeerKit.framework */,
+				E86EC4421AB734F5001A7734 /* PeerKit-iOS-Tests.xctest */,
+				E86EC4521AB73597001A7734 /* PeerKit-OSX-Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -128,12 +162,56 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E8DC827F1AB7306C000BB585 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8DC829C1AB730CD000BB585 /* PeerKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		E89FD6BF1A0C3CDC00C2FEF7 /* PeerKit */ = {
+		E86EC4411AB734F5001A7734 /* PeerKit-iOS-Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E89FD6D61A0C3CDC00C2FEF7 /* Build configuration list for PBXNativeTarget "PeerKit" */;
+			buildConfigurationList = E86EC44B1AB734F5001A7734 /* Build configuration list for PBXNativeTarget "PeerKit-iOS-Tests" */;
+			buildPhases = (
+				E86EC43E1AB734F5001A7734 /* Sources */,
+				E86EC43F1AB734F5001A7734 /* Frameworks */,
+				E86EC4401AB734F5001A7734 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E86EC44A1AB734F5001A7734 /* PBXTargetDependency */,
+			);
+			name = "PeerKit-iOS-Tests";
+			productName = "PeerKit-iOS-Tests";
+			productReference = E86EC4421AB734F5001A7734 /* PeerKit-iOS-Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E86EC4511AB73597001A7734 /* PeerKit-OSX-Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E86EC45B1AB73597001A7734 /* Build configuration list for PBXNativeTarget "PeerKit-OSX-Tests" */;
+			buildPhases = (
+				E86EC44E1AB73597001A7734 /* Sources */,
+				E86EC44F1AB73597001A7734 /* Frameworks */,
+				E86EC4501AB73597001A7734 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E86EC45A1AB73597001A7734 /* PBXTargetDependency */,
+			);
+			name = "PeerKit-OSX-Tests";
+			productName = "PeerKit-OSX-Tests";
+			productReference = E86EC4521AB73597001A7734 /* PeerKit-OSX-Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E89FD6BF1A0C3CDC00C2FEF7 /* PeerKit-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E89FD6D61A0C3CDC00C2FEF7 /* Build configuration list for PBXNativeTarget "PeerKit-iOS" */;
 			buildPhases = (
 				E89FD6BB1A0C3CDC00C2FEF7 /* Sources */,
 				E89FD6BC1A0C3CDC00C2FEF7 /* Frameworks */,
@@ -144,28 +222,28 @@
 			);
 			dependencies = (
 			);
-			name = PeerKit;
+			name = "PeerKit-iOS";
 			productName = PeerKit;
 			productReference = E89FD6C01A0C3CDC00C2FEF7 /* PeerKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		E89FD6CA1A0C3CDC00C2FEF7 /* PeerKitTests */ = {
+		E8DC82811AB7306C000BB585 /* PeerKit-OSX */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E89FD6D91A0C3CDC00C2FEF7 /* Build configuration list for PBXNativeTarget "PeerKitTests" */;
+			buildConfigurationList = E8DC82951AB7306C000BB585 /* Build configuration list for PBXNativeTarget "PeerKit-OSX" */;
 			buildPhases = (
-				E89FD6C71A0C3CDC00C2FEF7 /* Sources */,
-				E89FD6C81A0C3CDC00C2FEF7 /* Frameworks */,
-				E89FD6C91A0C3CDC00C2FEF7 /* Resources */,
+				E8DC827D1AB7306C000BB585 /* Sources */,
+				E8DC827E1AB7306C000BB585 /* Frameworks */,
+				E8DC827F1AB7306C000BB585 /* Headers */,
+				E8DC82801AB7306C000BB585 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				E89FD6CE1A0C3CDC00C2FEF7 /* PBXTargetDependency */,
 			);
-			name = PeerKitTests;
-			productName = PeerKitTests;
-			productReference = E89FD6CB1A0C3CDC00C2FEF7 /* PeerKitTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
+			name = "PeerKit-OSX";
+			productName = "PeerKit-OSX";
+			productReference = E8DC82821AB7306C000BB585 /* PeerKit.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -176,11 +254,17 @@
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "JP Simard";
 				TargetAttributes = {
+					E86EC4411AB734F5001A7734 = {
+						CreatedOnToolsVersion = 6.3;
+					};
+					E86EC4511AB73597001A7734 = {
+						CreatedOnToolsVersion = 6.3;
+					};
 					E89FD6BF1A0C3CDC00C2FEF7 = {
 						CreatedOnToolsVersion = 6.1;
 					};
-					E89FD6CA1A0C3CDC00C2FEF7 = {
-						CreatedOnToolsVersion = 6.1;
+					E8DC82811AB7306C000BB585 = {
+						CreatedOnToolsVersion = 6.3;
 					};
 				};
 			};
@@ -196,13 +280,29 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E89FD6BF1A0C3CDC00C2FEF7 /* PeerKit */,
-				E89FD6CA1A0C3CDC00C2FEF7 /* PeerKitTests */,
+				E89FD6BF1A0C3CDC00C2FEF7 /* PeerKit-iOS */,
+				E86EC4411AB734F5001A7734 /* PeerKit-iOS-Tests */,
+				E8DC82811AB7306C000BB585 /* PeerKit-OSX */,
+				E86EC4511AB73597001A7734 /* PeerKit-OSX-Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		E86EC4401AB734F5001A7734 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E86EC4501AB73597001A7734 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E89FD6BE1A0C3CDC00C2FEF7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -210,7 +310,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E89FD6C91A0C3CDC00C2FEF7 /* Resources */ = {
+		E8DC82801AB7306C000BB585 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -220,6 +320,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		E86EC43E1AB734F5001A7734 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E86EC45E1AB735A1001A7734 /* PeerKitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E86EC44E1AB73597001A7734 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E86EC45F1AB735A2001A7734 /* PeerKitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E89FD6BB1A0C3CDC00C2FEF7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -232,25 +348,112 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E89FD6C71A0C3CDC00C2FEF7 /* Sources */ = {
+		E8DC827D1AB7306C000BB585 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E89FD6D31A0C3CDC00C2FEF7 /* PeerKitTests.swift in Sources */,
+				E8DC82A01AB730D3000BB585 /* Session.swift in Sources */,
+				E8DC829E1AB730D3000BB585 /* Advertiser.swift in Sources */,
+				E8DC829D1AB730D3000BB585 /* PeerKit.swift in Sources */,
+				E8DC82A11AB730D3000BB585 /* Transceiver.swift in Sources */,
+				E8DC829F1AB730D3000BB585 /* Browser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		E89FD6CE1A0C3CDC00C2FEF7 /* PBXTargetDependency */ = {
+		E86EC44A1AB734F5001A7734 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E89FD6BF1A0C3CDC00C2FEF7 /* PeerKit */;
-			targetProxy = E89FD6CD1A0C3CDC00C2FEF7 /* PBXContainerItemProxy */;
+			target = E89FD6BF1A0C3CDC00C2FEF7 /* PeerKit-iOS */;
+			targetProxy = E86EC4491AB734F5001A7734 /* PBXContainerItemProxy */;
+		};
+		E86EC45A1AB73597001A7734 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E8DC82811AB7306C000BB585 /* PeerKit-OSX */;
+			targetProxy = E86EC4591AB73597001A7734 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		E86EC44C1AB734F5001A7734 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PeerKitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E86EC44D1AB734F5001A7734 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = PeerKitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		E86EC45C1AB73597001A7734 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PeerKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		E86EC45D1AB73597001A7734 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = PeerKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 		E89FD6D41A0C3CDC00C2FEF7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -286,7 +489,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -326,7 +529,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -339,6 +542,7 @@
 		E89FD6D71A0C3CDC00C2FEF7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -347,7 +551,7 @@
 				INFOPLIST_FILE = PeerKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = PeerKit;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -356,6 +560,7 @@
 		E89FD6D81A0C3CDC00C2FEF7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -364,44 +569,81 @@
 				INFOPLIST_FILE = PeerKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = PeerKit;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
-		E89FD6DA1A0C3CDC00C2FEF7 /* Debug */ = {
+		E8DC82961AB7306C000BB585 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = PeerKitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "$(SRCROOT)/PeerKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = PeerKit;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
-		E89FD6DB1A0C3CDC00C2FEF7 /* Release */ = {
+		E8DC82971AB7306C000BB585 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = PeerKitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/PeerKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = PeerKit;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		E86EC44B1AB734F5001A7734 /* Build configuration list for PBXNativeTarget "PeerKit-iOS-Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E86EC44C1AB734F5001A7734 /* Debug */,
+				E86EC44D1AB734F5001A7734 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E86EC45B1AB73597001A7734 /* Build configuration list for PBXNativeTarget "PeerKit-OSX-Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E86EC45C1AB73597001A7734 /* Debug */,
+				E86EC45D1AB73597001A7734 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E89FD6BA1A0C3CDC00C2FEF7 /* Build configuration list for PBXProject "PeerKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -411,21 +653,23 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E89FD6D61A0C3CDC00C2FEF7 /* Build configuration list for PBXNativeTarget "PeerKit" */ = {
+		E89FD6D61A0C3CDC00C2FEF7 /* Build configuration list for PBXNativeTarget "PeerKit-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E89FD6D71A0C3CDC00C2FEF7 /* Debug */,
 				E89FD6D81A0C3CDC00C2FEF7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		E89FD6D91A0C3CDC00C2FEF7 /* Build configuration list for PBXNativeTarget "PeerKitTests" */ = {
+		E8DC82951AB7306C000BB585 /* Build configuration list for PBXNativeTarget "PeerKit-OSX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E89FD6DA1A0C3CDC00C2FEF7 /* Debug */,
-				E89FD6DB1A0C3CDC00C2FEF7 /* Release */,
+				E8DC82961AB7306C000BB585 /* Debug */,
+				E8DC82971AB7306C000BB585 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
