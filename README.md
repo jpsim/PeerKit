@@ -2,9 +2,6 @@
 
 ## An open-source Swift framework for building event-driven, zero-config Multipeer Connectivity apps
 
-<a href="https://travis-ci.org/jpsim/PeerKit?branch=master">
-    <img src="https://travis-ci.org/jpsim/PeerKit.svg?branch=master" align="" vspace="2px" hspace="5px">
-</a>
 ## Usage
 
 ```swift
