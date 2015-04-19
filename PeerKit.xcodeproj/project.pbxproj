@@ -633,6 +633,7 @@
 				E86EC44D1AB734F5001A7734 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E86EC45B1AB73597001A7734 /* Build configuration list for PBXNativeTarget "PeerKit-OSX-Tests" */ = {
 			isa = XCConfigurationList;
@@ -641,6 +642,7 @@
 				E86EC45D1AB73597001A7734 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E89FD6BA1A0C3CDC00C2FEF7 /* Build configuration list for PBXProject "PeerKit" */ = {
 			isa = XCConfigurationList;

@@ -22,15 +22,15 @@
          </BuildActionEntry>
          <BuildActionEntry
             buildForTesting = "YES"
-            buildForRunning = "YES"
+            buildForRunning = "NO"
             buildForProfiling = "NO"
             buildForArchiving = "NO"
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E8DC828B1AB7306C000BB585"
-               BuildableName = "PeerKit-OSXTests.xctest"
-               BlueprintName = "PeerKit-OSXTests"
+               BlueprintIdentifier = "E86EC4511AB73597001A7734"
+               BuildableName = "PeerKit-OSX-Tests.xctest"
+               BlueprintName = "PeerKit-OSX-Tests"
                ReferencedContainer = "container:PeerKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

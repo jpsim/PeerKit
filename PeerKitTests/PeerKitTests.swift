@@ -6,6 +6,10 @@
 //  Copyright (c) 2014 JP Simard. All rights reserved.
 //
 
+import Foundation
+#if os(iOS)
+import UIKit
+#endif
 import XCTest
 import PeerKit
 
