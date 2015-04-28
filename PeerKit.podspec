@@ -11,6 +11,7 @@ Pod::Spec.new do |s|
     :tag => s.version
   }
   s.ios.deployment_target = '8.0'
+  s.osx.deployment_target = '10.10'
   s.source_files = 'PeerKit/*.swift'
   s.requires_arc = true
 end
