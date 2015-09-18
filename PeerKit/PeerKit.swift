@@ -111,22 +111,29 @@ public func stopTransceiving() {
 
 // MARK: Events
 
-public func sendEvent(event: String, object: AnyObject? = nil, toPeers peers: [MCPeerID]? = session?.connectedPeers as? [MCPeerID]) {
-    if peers == nil || (peers!.count == 0) {
+public func sendEvent(event: String, object: AnyObject? = nil, toPeers peers: [MCPeerID]? = session?.connectedPeers) {
+    guard let peers = peers where !peers.isEmpty else {
         return
     }
+
     var rootObject: [String: AnyObject] = ["event": event]
+
     if let object: AnyObject = object {
         rootObject["object"] = object
     }
+
     let data = NSKeyedArchiver.archivedDataWithRootObject(rootObject)
-    session?.sendData(data, toPeers: peers, withMode: .Reliable, error: nil)
+
+    do {
+        try session?.sendData(data, toPeers: peers, withMode: .Reliable)
+    } catch _ {
+    }
 }
 
-public func sendResourceAtURL(resourceURL: NSURL!,
-                   withName resourceName: String!,
-  toPeers peers: [MCPeerID]? = session?.connectedPeers as? [MCPeerID],
-  withCompletionHandler completionHandler: ((NSError!) -> Void)!) -> [NSProgress]! {
+public func sendResourceAtURL(resourceURL: NSURL,
+                   withName resourceName: String,
+  toPeers peers: [MCPeerID]? = session?.connectedPeers,
+  withCompletionHandler completionHandler: ((NSError?) -> Void)?) -> [NSProgress?]? {
 
     if let session = session {
         return peers?.map { peerID in

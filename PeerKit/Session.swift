@@ -38,7 +38,7 @@ public class Session: NSObject, MCSessionDelegate {
 
     // MARK: MCSessionDelegate
 
-    public func session(session: MCSession!, peer peerID: MCPeerID!, didChangeState state: MCSessionState) {
+    public func session(session: MCSession, peer peerID: MCPeerID, didChangeState state: MCSessionState) {
         switch state {
             case .Connecting:
                 delegate?.connecting(myPeerID, toPeer: peerID)
@@ -49,19 +49,19 @@ public class Session: NSObject, MCSessionDelegate {
         }
     }
 
-    public func session(session: MCSession!, didReceiveData data: NSData!, fromPeer peerID: MCPeerID!) {
+    public func session(session: MCSession, didReceiveData data: NSData, fromPeer peerID: MCPeerID) {
         delegate?.receivedData(myPeerID, data: data, fromPeer: peerID)
     }
 
-    public func session(session: MCSession!, didReceiveStream stream: NSInputStream!, withName streamName: String!, fromPeer peerID: MCPeerID!) {
+    public func session(session: MCSession, didReceiveStream stream: NSInputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
         // unused
     }
 
-    public func session(session: MCSession!, didStartReceivingResourceWithName resourceName: String!, fromPeer peerID: MCPeerID!, withProgress progress: NSProgress!) {
+    public func session(session: MCSession, didStartReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, withProgress progress: NSProgress) {
         // unused
     }
 
-    public func session(session: MCSession!, didFinishReceivingResourceWithName resourceName: String!, fromPeer peerID: MCPeerID!, atURL localURL: NSURL!, withError error: NSError!) {
+    public func session(session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, atURL localURL: NSURL, withError error: NSError?) {
         if (error == nil) {
             delegate?.finishReceivingResource(myPeerID, resourceName: resourceName, fromPeer: peerID, atURL: localURL)
         }

@@ -33,11 +33,11 @@ class Browser: NSObject, MCNearbyServiceBrowserDelegate {
         mcBrowser?.stopBrowsingForPeers()
     }
 
-    func browser(browser: MCNearbyServiceBrowser!, foundPeer peerID: MCPeerID!, withDiscoveryInfo info: [NSObject : AnyObject]!) {
+    func browser(browser: MCNearbyServiceBrowser, foundPeer peerID: MCPeerID, withDiscoveryInfo info: [String : String]?) {
         browser.invitePeer(peerID, toSession: mcSession, withContext: nil, timeout: 30)
     }
 
-    func browser(browser: MCNearbyServiceBrowser!, lostPeer peerID: MCPeerID!) {
+    func browser(browser: MCNearbyServiceBrowser, lostPeer peerID: MCPeerID) {
         // unused
     }
 }
