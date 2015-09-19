@@ -20,7 +20,7 @@ class Advertiser: NSObject, MCNearbyServiceAdvertiserDelegate {
 
     private var advertiser: MCNearbyServiceAdvertiser?
 
-    func startAdvertising(#serviceType: String, discoveryInfo: [String: String]? = nil) {
+    func startAdvertising(serviceType serviceType: String, discoveryInfo: [String: String]? = nil) {
         advertiser = MCNearbyServiceAdvertiser(peer: mcSession.myPeerID, discoveryInfo: discoveryInfo, serviceType: serviceType)
         advertiser?.delegate = self
         advertiser?.startAdvertisingPeer()
@@ -31,7 +31,7 @@ class Advertiser: NSObject, MCNearbyServiceAdvertiserDelegate {
         advertiser?.stopAdvertisingPeer()
     }
 
-    func advertiser(advertiser: MCNearbyServiceAdvertiser!, didReceiveInvitationFromPeer peerID: MCPeerID!, withContext context: NSData?, invitationHandler: ((Bool, MCSession!) -> Void)!) {
+    func advertiser(advertiser: MCNearbyServiceAdvertiser, didReceiveInvitationFromPeer peerID: MCPeerID, withContext context: NSData?, invitationHandler: ((Bool, MCSession) -> Void)) {
         let accept = mcSession.myPeerID.hashValue > peerID.hashValue
         invitationHandler(accept, mcSession)
         if accept {

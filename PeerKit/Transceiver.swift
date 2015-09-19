@@ -27,7 +27,7 @@ public class Transceiver: SessionDelegate {
         session.delegate = self
     }
 
-    func startTransceiving(#serviceType: String, discoveryInfo: [String: String]? = nil) {
+    func startTransceiving(serviceType serviceType: String, discoveryInfo: [String: String]? = nil) {
         advertiser.startAdvertising(serviceType: serviceType, discoveryInfo: discoveryInfo)
         browser.startBrowsing(serviceType)
         transceiverMode = .Both
@@ -40,26 +40,26 @@ public class Transceiver: SessionDelegate {
         session.disconnect()
     }
 
-    func startAdvertising(#serviceType: String, discoveryInfo: [String: String]? = nil) {
+    func startAdvertising(serviceType serviceType: String, discoveryInfo: [String: String]? = nil) {
         advertiser.startAdvertising(serviceType: serviceType, discoveryInfo: discoveryInfo)
         transceiverMode = .Advertise
     }
 
-    func startBrowsing(#serviceType: String) {
+    func startBrowsing(serviceType serviceType: String) {
         browser.startBrowsing(serviceType)
         transceiverMode = .Browse
     }
 
     public func connecting(myPeerID: MCPeerID, toPeer peer: MCPeerID) {
-        didConnecting(myPeerID, peer)
+        didConnecting(myPeerID, peer: peer)
     }
 
     public func connected(myPeerID: MCPeerID, toPeer peer: MCPeerID) {
-        didConnect(myPeerID, peer)
+        didConnect(myPeerID, peer: peer)
     }
 
     public func disconnected(myPeerID: MCPeerID, fromPeer peer: MCPeerID) {
-        didDisconnect(myPeerID, peer)
+        didDisconnect(myPeerID, peer: peer)
     }
 
     public func receivedData(myPeerID: MCPeerID, data: NSData, fromPeer peer: MCPeerID) {
@@ -67,6 +67,6 @@ public class Transceiver: SessionDelegate {
     }
 
     public func finishReceivingResource(myPeerID: MCPeerID, resourceName: String, fromPeer peer: MCPeerID, atURL localURL: NSURL) {
-        didFinishReceivingResource(myPeerID, resourceName, fromPeer: peer, atURL: localURL)
+        didFinishReceivingResource(myPeerID, resourceName: resourceName, fromPeer: peer, atURL: localURL)
     }
 }
