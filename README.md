@@ -9,7 +9,7 @@
 PeerKit.transceive("com-jpsim-myApp")
 
 enum Event: String {
-    case StartGame = "StartGame", EndGame = "EndGame"
+    case StartGame, EndGame
 }
 
 // Send a StartGame event with attached data to all peers
