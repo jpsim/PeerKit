@@ -63,7 +63,7 @@ public class Transceiver: SessionDelegate {
     }
 
     public func receivedData(myPeerID: MCPeerID, data: Data, fromPeer peer: MCPeerID) {
-        didReceiveData(data: data, fromPeer: peer)
+        didReceiveData(data, fromPeer: peer)
     }
 
     public func finishReceivingResource(myPeerID: MCPeerID, resourceName: String, fromPeer peer: MCPeerID, atURL localURL: URL) {
