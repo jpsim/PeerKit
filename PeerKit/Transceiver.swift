@@ -27,9 +27,9 @@ public class Transceiver: SessionDelegate {
         session.delegate = self
     }
 
-    func startTransceiving(serviceType serviceType: String, discoveryInfo: [String: String]? = nil) {
+    func startTransceiving(serviceType: String, discoveryInfo: [String: String]? = nil) {
         advertiser.startAdvertising(serviceType: serviceType, discoveryInfo: discoveryInfo)
-        browser.startBrowsing(serviceType)
+        browser.startBrowsing(serviceType: serviceType)
         transceiverMode = .Both
     }
 
@@ -40,33 +40,33 @@ public class Transceiver: SessionDelegate {
         session.disconnect()
     }
 
-    func startAdvertising(serviceType serviceType: String, discoveryInfo: [String: String]? = nil) {
+    func startAdvertising(serviceType: String, discoveryInfo: [String: String]? = nil) {
         advertiser.startAdvertising(serviceType: serviceType, discoveryInfo: discoveryInfo)
         transceiverMode = .Advertise
     }
 
-    func startBrowsing(serviceType serviceType: String) {
-        browser.startBrowsing(serviceType)
+    func startBrowsing(serviceType: String) {
+        browser.startBrowsing(serviceType: serviceType)
         transceiverMode = .Browse
     }
 
     public func connecting(myPeerID: MCPeerID, toPeer peer: MCPeerID) {
-        didConnecting(myPeerID, peer: peer)
+        didConnecting(myPeerID: myPeerID, peer: peer)
     }
 
     public func connected(myPeerID: MCPeerID, toPeer peer: MCPeerID) {
-        didConnect(myPeerID, peer: peer)
+        didConnect(myPeerID: myPeerID, peer: peer)
     }
 
     public func disconnected(myPeerID: MCPeerID, fromPeer peer: MCPeerID) {
-        didDisconnect(myPeerID, peer: peer)
+        didDisconnect(myPeerID: myPeerID, peer: peer)
     }
 
-    public func receivedData(myPeerID: MCPeerID, data: NSData, fromPeer peer: MCPeerID) {
-        didReceiveData(data, fromPeer: peer)
+    public func receivedData(myPeerID: MCPeerID, data: Data, fromPeer peer: MCPeerID) {
+        didReceiveData(data: data, fromPeer: peer)
     }
 
-    public func finishReceivingResource(myPeerID: MCPeerID, resourceName: String, fromPeer peer: MCPeerID, atURL localURL: NSURL) {
-        didFinishReceivingResource(myPeerID, resourceName: resourceName, fromPeer: peer, atURL: localURL)
+    public func finishReceivingResource(myPeerID: MCPeerID, resourceName: String, fromPeer peer: MCPeerID, atURL localURL: URL) {
+        didFinishReceivingResource(myPeerID: myPeerID, resourceName: resourceName, fromPeer: peer, atURL: localURL)
     }
 }
