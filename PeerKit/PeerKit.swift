@@ -14,7 +14,7 @@ import MultipeerConnectivity
 public typealias PeerBlock = ((_ myPeerID: MCPeerID, _ peerID: MCPeerID) -> Void)
 public typealias EventBlock = ((_ peerID: MCPeerID, _ event: String, _ object: AnyObject?) -> Void)
 public typealias ObjectBlock = ((_ peerID: MCPeerID, _ object: AnyObject?) -> Void)
-public typealias ResourceBlock = ((_ myPeerID: MCPeerID, _ resourceName: String, _ peer: MCPeerID, _ localURL: URL) -> Void)
+public typealias ResourceBlock = ((_ myPeerID: MCPeerID, _ resourceName: String, _ peer: MCPeerID, _ localURL: URL?) -> Void)
 
 // MARK: Event Blocks
 
@@ -82,7 +82,7 @@ func didReceiveData(_ data: Data, fromPeer peer: MCPeerID) {
     }
 }
 
-func didFinishReceivingResource(myPeerID: MCPeerID, resourceName: String, fromPeer peer: MCPeerID, atURL localURL: URL) {
+func didFinishReceivingResource(myPeerID: MCPeerID, resourceName: String, fromPeer peer: MCPeerID, atURL localURL: URL?) {
     if let onFinishReceivingResource = onFinishReceivingResource {
         DispatchQueue.main.async {
             onFinishReceivingResource(myPeerID, resourceName, peer, localURL)
